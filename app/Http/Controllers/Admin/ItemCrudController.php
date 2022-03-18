@@ -42,18 +42,23 @@ class ItemCrudController extends CrudController
         
         //CRUD::column('id');
         CRUD::column('name');
-        CRUD::column('image');
+        $this->crud->setColumnDetails('name', ['label' => 'Nama barang']);
+        //CRUD::column('image');
         CRUD::column('description');
+        $this->crud->setColumnDetails('description', ['label' => 'Deskripsi']);
         CRUD::column('product_id');
+        $this->crud->setColumnDetails('product_id', ['label' => 'Jenis']);
         CRUD::column('price');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        $this->crud->setColumnDetails('price', ['label' => 'Harga']);
+        //CRUD::column('created_at');
+        //CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
+        $this->crud->disableResponsiveTable();
     }
 
     /**

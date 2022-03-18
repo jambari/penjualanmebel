@@ -3,7 +3,8 @@
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('product') }}'><i class='nav-icon la la-couch'></i> Produk</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('item') }}'><i class='nav-icon la la-bed'></i> Item</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('custom') }}'><i class='nav-icon la la-pen-nib'></i> Custom</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('custom') }}'><i class='nav-icon la la-pen-nib'></i> Kustom </a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('order') }}'><i class='nav-icon la la-list-ul'></i>Daftar Pemesanan</a></li>
 
 <!-- Users, Roles, Permissions -->
 <li class="nav-item nav-dropdown">

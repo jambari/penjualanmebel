@@ -31,3 +31,5 @@ class CreateCustomsTable extends Migration
         Schema::dropIfExists('customs');
     }
 }
+
+

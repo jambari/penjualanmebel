@@ -28,7 +28,7 @@ class CustomCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Custom::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/custom');
-        CRUD::setEntityNameStrings('custom', 'customs');
+        CRUD::setEntityNameStrings('Kustom', 'Kustom');
     }
 
     /**
@@ -41,6 +41,7 @@ class CustomCrudController extends CrudController
     {
         //CRUD::column('created_at');
         CRUD::column('name');
+        $this->crud->setColumnDetails('name', ['label' => 'Jenis Mebel']);
         CRUD::column('harga');
         //CRUD::column('id');
         //CRUD::column('updated_at');
@@ -63,7 +64,7 @@ class CustomCrudController extends CrudController
         CRUD::setValidation(CustomRequest::class);
 
         //CRUD::field('created_at');
-        CRUD::addField(['name' => 'name', 'label' => 'Tipe', 'type' => 'text']);
+        CRUD::addField(['name' => 'name', 'label' => 'Jenis Mebel', 'type' => 'text']);
         CRUD::field('harga');
         //CRUD::field('id');
         //CRUD::field('updated_at');

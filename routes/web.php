@@ -19,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index'); //home
 
+//Order
+Route::resource('orders', App\Http\Controllers\OrderController::class);
+
+Route::get('orders/confirmation/{id}','App\Http\Controllers\OrderController@confirmation')->name('confirmation');
+

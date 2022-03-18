@@ -42,8 +42,9 @@ class ProductCrudController extends CrudController
         
         //CRUD::column('id');
         CRUD::column('name');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        $this->crud->setColumnDetails('name', ['label' => 'Jenis mebel']);
+        //CRUD::column('created_at');
+        //CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
