@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
 
     public function index () {
-        $items = Item::latest()->paginate(6);
+        $items = Item::latest()->paginate(3);
         // return view('welcome',compact('items'))
         //     ->with('i', (request()->input('page', 1) - 1) * 5);
         return view('welcome',compact('items'));

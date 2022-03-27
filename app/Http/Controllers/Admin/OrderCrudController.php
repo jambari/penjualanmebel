@@ -49,7 +49,7 @@ class OrderCrudController extends CrudController
         CRUD::column('customer_phone');
         $this->crud->setColumnDetails('customer_phone', ['label' => 'HP']);
         CRUD::column('item_name');
-        $this->crud->setColumnDetails('item_name', ['label' => 'Nama Barang']);
+        $this->crud->setColumnDetails('item_name', ['label' => 'Produk']);
         CRUD::column('item_price');
         $this->crud->setColumnDetails('item_price', ['label' => 'Harga satuan']);
         CRUD::column('payment_status');

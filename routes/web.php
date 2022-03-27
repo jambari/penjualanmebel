@@ -24,3 +24,5 @@ Route::resource('orders', App\Http\Controllers\OrderController::class);
 
 Route::get('orders/confirmation/{id}','App\Http\Controllers\OrderController@confirmation')->name('confirmation');
 
+Route::get('/admin/dashboard', 'App\Http\Controllers\DashboardController@index'); //Dashboard
+

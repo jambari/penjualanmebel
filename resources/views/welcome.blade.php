@@ -64,7 +64,7 @@
     <div class="col-sm">
       <img src="{{ asset("storage/$item->image") }}" alt="{{ $item->name }}" style="width:80%">
       <h3>{{ $item->name }}</h3>
-      <p>@if ($item->description) {!! \Illuminate\Support\Str::limit($item->description, 100, $end='...') !!} @endif</p>
+      <!-- <p>@if ($item->description) {!! \Illuminate\Support\Str::limit($item->description, 100, $end='...') !!} @endif</p> -->
       <button class="btn btn-light ">Rp {{ number_format($item->price, 2, ',', '.') }}</button>
       <button class="btn btn-warning">BELI</button>
     </div>
