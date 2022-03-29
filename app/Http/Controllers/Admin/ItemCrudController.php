@@ -50,6 +50,10 @@ class ItemCrudController extends CrudController
         $this->crud->setColumnDetails('product_id', ['label' => 'Jenis']);
         CRUD::column('price');
         $this->crud->setColumnDetails('price', ['label' => 'Harga']);
+        CRUD::column('dimention');
+        $this->crud->setColumnDetails('dimention', ['label' => 'Dimensi']);
+        CRUD::column('stock');
+        $this->crud->setColumnDetails('stock', ['label' => 'stok']);
         //CRUD::column('created_at');
         //CRUD::column('updated_at');
 
@@ -117,6 +121,18 @@ class ItemCrudController extends CrudController
             'options'   => (function ($query) {
                     return $query->orderBy('name', 'ASC')->get();
                 }),
+        ]);
+
+        CRUD::addField([
+            'name' => 'dimention',
+            'label' => 'Dimensi',
+            'type' => 'text'
+        ]);
+
+        CRUD::addField([
+            'name' => 'stock',
+            'label' => 'Stok',
+            'type' => 'number'
         ]);
         //CRUD::field('updated_at');
 

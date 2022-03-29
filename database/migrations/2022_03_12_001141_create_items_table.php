@@ -19,6 +19,8 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->char('image');
             $table->foreignId('product_id')->constrained('products');
+            $table->integer('stock')->nullable();
+            $table->string('dimention')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

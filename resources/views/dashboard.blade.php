@@ -47,11 +47,41 @@
 
 <body>
     <!-- Top menu -->
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="/images/a.png" alt="logo mebel karya utama" width="50" height="50"> CV Mebel Karya Utama</h5>
-        <nav class="my-2 my-md-0 mr-md-3"> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="p-2 text-dark">Dashboard</a> <a href="{{ route('logout') }}" class="p-2 text-dark">Logout</a> @else <a href="{{ route('login') }}" class="p-2 text-dark">Log in</a> @if (Route::has('register')) <a href="{{ route('register') }}" class="p-2 text-dark">Register</a> @endif @endauth @endif </nav>
-    </div> 
-    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"><img src="/images/a.png" alt="logo mebel karya utama" width="50" height="50"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+@if (Route::has('login')) @auth
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          {{ ucfirst(Auth::user()->name) }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">
+                          <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('/dashboard') }}">Customer</a>
+      </li>
+    </ul>
+@endauth @endif
+  </div>
+</nav>
+<br>
     
     <!-- !PAGE CONTENT! -->
     <div class="container-md" style="">

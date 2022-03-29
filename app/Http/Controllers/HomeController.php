@@ -14,4 +14,9 @@ class HomeController extends Controller
         //     ->with('i', (request()->input('page', 1) - 1) * 5);
         return view('welcome',compact('items'));
     }
+
+    public function dashboard () {
+        $items = Item::latest()->paginate(3);
+        return view('dashboard', compact('items'));
+    }
 }

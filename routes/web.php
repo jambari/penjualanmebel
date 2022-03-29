@@ -17,7 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
 Route::get('/', 'App\Http\Controllers\HomeController@index'); //home
+Route::get('/dashboard', 'App\Http\Controllers\HomeController@dashboard')->middleware(['auth'])->name('dashboard'); //home
 
 //Order
 Route::resource('orders', App\Http\Controllers\OrderController::class);
@@ -25,4 +33,3 @@ Route::resource('orders', App\Http\Controllers\OrderController::class);
 Route::get('orders/confirmation/{id}','App\Http\Controllers\OrderController@confirmation')->name('confirmation');
 
 Route::get('/admin/dashboard', 'App\Http\Controllers\DashboardController@index'); //Dashboard
-
